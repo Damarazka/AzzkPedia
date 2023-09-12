@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -10,7 +11,7 @@ android {
     defaultConfig {
         applicationId = "com.damarazka.azzkpedia"
         minSdk = 33
-        targetSdk = 33
+        targetSdkPreview = "UpsideDownCake"
         versionCode = 1
         versionName = "1.0"
 
@@ -33,6 +34,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -44,4 +48,21 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
+    // splash screen
+    implementation ("androidx.core:core-splashscreen:1.0.0")
+
+    // picasso
+    implementation ("com.squareup.picasso:picasso:2.8")
+
+    // moshi - JSON converter
+    implementation("com.squareup.moshi:moshi:1.14.0")
+    // kotlin Codegen
+    // biarin ksp-nya merah dulu
+    ksp("com.squareup.moshi:moshi-kotlin-codegen:1.14.0")
+
+    // retrofit - request HTTP/HTTPS Web Service
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-moshi:2.9.0")
+
 }
