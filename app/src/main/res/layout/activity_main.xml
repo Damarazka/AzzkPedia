@@ -15,14 +15,20 @@
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolBar"
             android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginStart="4dp"
             app:logo="@mipmap/ic_launcher"
-            app:titleTextColor="@android:color/transparent"
-            android:layout_height="?attr/actionBarSize" />
+            app:titleTextColor="@android:color/transparent" />
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tadLayouts"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            app:tabIndicatorColor="@color/blue"
+            android:layout_height="wrap_content"
+            app:tabSelectedTextAppearance="@style/textStyleBold"
+            app:tabTextAppearance="@style/textStyleRegular." />
 
     </com.google.android.material.appbar.AppBarLayout>
 
