@@ -35,18 +35,5 @@ class MainActivity : AppCompatActivity() {
         TabLayoutMediator(binding.tadLayouts, binding.vpContainer){ tab, position ->
             tab.text = ListFragment[position]
         }.attach()
-
-        ApiClient.retrofit.getCommonNews().enqueue(object : Callback<NewsResponse>{
-            override fun onResponse(call: Call<NewsResponse>, response: Response<NewsResponse>) {
-                Toast.makeText(this@MainActivity,"OK",Toast.LENGTH_SHORT).show()
-                Log.i("MainActivity","onResponse : ${response.body()}")
-            }
-
-            override fun onFailure(call: Call<NewsResponse>, t: Throwable) {
-                Snackbar.make(findViewById(android.R.id.content),
-                    "Call Failed" + t.localizedMessage, Snackbar.LENGTH_SHORT).show()
-            }
-
-        })
     }
 }

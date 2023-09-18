@@ -16,6 +16,7 @@ data class NewsResponse(
     val status: String? = null
 )
 
+
 @JsonClass(generateAdapter = true)
 data class ArticlesItem(
 

@@ -12,6 +12,5 @@ interface ApiService {
         @Query("language") language : String = "en",
         @Query("sortBy") sortBy : String = "popularity",
         @Query("pageSize") pageSize : Int = 30,
-        @Query("apiKey") apiKey : String = "6849a53e1195491495b2b0a17209a630"
     ) : Call<NewsResponse>
 }
