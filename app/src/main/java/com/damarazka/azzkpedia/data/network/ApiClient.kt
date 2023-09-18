@@ -10,16 +10,17 @@ object ApiClient {
         .addInterceptor {
             val request = it.request()
                 .newBuilder()
-                .addHeader("X-Api-Key", "6849a53e1195491495b2b0a17209a630")
+                .addHeader("X-Api-Key", "33c253f8c5524a78a78865b6bda64175")
                 .build()
             it.proceed(request)
         }
-        .readTimeout(10, TimeUnit.SECONDS)
+        .readTimeout(10,TimeUnit.SECONDS)
         .retryOnConnectionFailure(false)
         .build()
 
-    fun getApiService(): ApiService {
-        return Retrofit.Builder()
+    fun getApiService(): ApiService{
+         return Retrofit.Builder()
+             .client(client)
             .baseUrl("https://newsapi.org/v2/")
             .addConverterFactory(MoshiConverterFactory.create())
             .build()

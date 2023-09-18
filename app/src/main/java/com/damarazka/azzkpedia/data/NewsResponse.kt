@@ -10,7 +10,7 @@ data class NewsResponse(
     val totalResults: Int? = null,
 
     @Json(name = "articles")
-    val articles: List<ArticlesItem?>? = null,
+    val articles: List<ArticlesItem>? = null,
 
     @Json(name = "status")
     val status: String? = null

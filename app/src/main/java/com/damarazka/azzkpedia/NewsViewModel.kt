@@ -19,7 +19,6 @@ class NewsViewModel : ViewModel() {
         ApiClient.getApiService().getCommonNews().enqueue(object : Callback<NewsResponse> {
             override fun onResponse(call: Call<NewsResponse>, response: Response<NewsResponse>) {
                 if (response.isSuccessful) {
-                    Log.i("ViewModel", "onResponse: ${response.body()} ")
                     _commonNews.postValue(response.body())
                 } else Log.e(
                     "ViewModel",
