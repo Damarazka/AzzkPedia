@@ -13,4 +13,20 @@ interface ApiService {
         @Query("sortBy") sortBy : String = "popularity",
         @Query("pageSize") pageSize : Int = 30,
     ) : Call<NewsResponse>
+
+    @GET("everything")
+    fun getDailyNews(
+        @Query("q") keyWord: String = "Daily",
+        @Query("language") language: String = "en"
+    ) : Call<NewsResponse>
+
+    @GET("top-headLines")
+    fun getSportNews(
+        @Query("sources") sources:String = "Sport"
+    ) : Call<NewsResponse>
+
+    @GET("everything")
+    fun getWarningNews(
+        @Query("q") keyWord: String = "warning"
+    ) : Call<NewsResponse>
 }

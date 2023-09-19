@@ -14,13 +14,13 @@ object ApiClient {
                 .build()
             it.proceed(request)
         }
-        .readTimeout(10,TimeUnit.SECONDS)
+        .readTimeout(10, TimeUnit.SECONDS)
         .retryOnConnectionFailure(false)
         .build()
 
-    fun getApiService(): ApiService{
-         return Retrofit.Builder()
-             .client(client)
+    fun getApiService(): ApiService {
+        return Retrofit.Builder()
+            .client(client)
             .baseUrl("https://newsapi.org/v2/")
             .addConverterFactory(MoshiConverterFactory.create())
             .build()
