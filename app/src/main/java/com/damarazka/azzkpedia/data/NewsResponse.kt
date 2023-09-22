@@ -1,7 +1,9 @@
 package com.damarazka.azzkpedia.data
 
+import android.os.Parcelable
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import kotlinx.parcelize.Parcelize
 
 @JsonClass(generateAdapter = true)
 data class NewsResponse(
@@ -16,7 +18,7 @@ data class NewsResponse(
     val status: String? = null
 )
 
-
+@Parcelize
 @JsonClass(generateAdapter = true)
 data class ArticlesItem(
 
@@ -33,9 +35,6 @@ data class ArticlesItem(
     @Json(name = "description")
     val description: String? = null,
 
-    @Json(name = "source")
-    val source: Source? = null,
-
     @Json(name = "title")
     val title: String? = null,
 
@@ -44,15 +43,4 @@ data class ArticlesItem(
 
     @Json(name = "content")
     val content: String? = null
-)
-
-@JsonClass(generateAdapter = true)
-data class Source(
-
-
-    @Json(name = "name")
-    val name: String? = null,
-
-    @Json(name = "id")
-    val id: Any? = null
-)
+) : Parcelable

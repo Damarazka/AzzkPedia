@@ -15,6 +15,15 @@ class NewsViewModel : ViewModel() {
     private val _commonNews = MutableLiveData<NewsResponse>()
     val commonNews get() = _commonNews as LiveData<NewsResponse>
 
+    private val _aboutDaily = MutableLiveData<NewsResponse>()
+    val dailyNews get() = _aboutDaily as LiveData<NewsResponse>
+
+    private val _aboutSport = MutableLiveData<NewsResponse>()
+    val sportNews get() = _aboutSport as LiveData<NewsResponse>
+
+    private val _aboutWarning = MutableLiveData<NewsResponse>()
+    val warningNews get() = _aboutWarning as LiveData<NewsResponse>
+
     fun getCommonNews() {
         ApiClient.getApiService().getCommonNews().enqueue(object : Callback<NewsResponse> {
             override fun onResponse(call: Call<NewsResponse>, response: Response<NewsResponse>) {
