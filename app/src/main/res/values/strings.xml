@@ -5,4 +5,5 @@
     <string name="getting_news">Getting News</string>
     <string name="content_desc_image_news_item">content_desc_image_news_item</string>
     <string name="detail_image_news">detail_image_news</string>
+    <string name="search">search</string>
 </resources>
