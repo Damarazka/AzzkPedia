@@ -22,11 +22,19 @@ interface ApiService {
 
     @GET("top-headLines")
     fun getSportNews(
-        @Query("sources") sources:String = "Sport"
+        @Query("category") sources:String = "sports",
+        @Query("language") language: String = "en"
     ) : Call<NewsResponse>
 
     @GET("everything")
     fun getWarningNews(
-        @Query("q") keyWord: String = "warning"
+        @Query("q") keyWord: String = "warning",
+        @Query("language") language: String = "en"
+    ) : Call<NewsResponse>
+
+    @GET("everything")
+    fun getSearchNews(
+        @Query("q") keyWord: String,
+        @Query("pageSize") pageSize: Int = 19
     ) : Call<NewsResponse>
 }

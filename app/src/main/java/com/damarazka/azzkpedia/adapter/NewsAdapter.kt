@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.damarazka.azzkpedia.DetailActivity
+import com.damarazka.azzkpedia.R
 import com.damarazka.azzkpedia.data.ArticlesItem
 import com.damarazka.azzkpedia.databinding.ItemNewsBinding
 import com.squareup.picasso.Picasso
@@ -32,7 +33,7 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.MyViewHolder>() {
         holder.binding.apply {
             itemTitle.text = data.title
             itemDate.text = data.publishedAt
-            Picasso.get().load(data.urlToImage).into(itemImage)
+            Picasso.get().load(data.urlToImage).placeholder(R.drawable.ic_launcher_foreground).into(itemImage)
         }
         holder.itemView.setOnClickListener{
             val intent = Intent(it.context, DetailActivity::class.java)
