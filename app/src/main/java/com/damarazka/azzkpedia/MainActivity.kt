@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.damarazka.azzkpedia.adapter.SectionPagerAdapter
 import com.damarazka.azzkpedia.databinding.ActivityMainBinding
 import com.google.android.material.tabs.TabLayoutMediator
@@ -16,6 +17,8 @@ class MainActivity : AppCompatActivity() {
     private val binding get() = _binding as ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        installSplashScreen()
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setSupportActionBar(binding.toolBar)
         setContentView(binding.root)
