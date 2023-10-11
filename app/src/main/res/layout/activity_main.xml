@@ -16,21 +16,22 @@
             android:id="@+id/toolBar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
+            android:layout_marginStart="4dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
-            android:layout_marginStart="4dp"
-            app:title="@string/app_name"
             app:logo="@mipmap/ic_logo"
+            app:title="@string/app_name"
             app:titleMarginStart="20dp"
             app:titleTextColor="@color/black" />
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tadLayouts"
             android:layout_width="match_parent"
-            app:tabIndicatorColor="@color/blue"
             android:layout_height="wrap_content"
+            app:tabIndicatorColor="@color/black"
             app:tabSelectedTextAppearance="@style/textStyleBold"
-            app:tabTextAppearance="@style/textStyleRegular." />
+            app:tabTextAppearance="@style/textStyleRegular."
+            app:tabTextColor="@color/black"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 
